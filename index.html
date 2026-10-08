@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login Test</title>
+</head>
+
+<body>
+    <h1>My Web App Tool</h1>
+    <p>Testing Google Sign-In:</p>
+
+    <!-- 1. LOAD THE GOOGLE CLIENT LIBRARY -->
+    <script src="https://google.com" async defer></script>
+
+    <!-- 2. INITIALIZE GOOGLE AUTH & THE BUTTON -->
+    <!-- Swap YOUR_CLIENT_ID with the actual string you copied -->
+    <div id="g_id_onload" data-client_id="349557569388-31niv4qavnfg5jrssef20n9ot0bio8fd.apps.googleusercontent.com" data-callback="handleCredentialResponse">
+    </div>
+
+    <!-- This renders the actual official Google button -->
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <!-- 3. THE HANDLER FUNCTION -->
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("SUCCESS! Google sent back a secure token.");
+            console.log("Encoded JWT ID Token:", response.credential);
+
+            alert("Login Successful! Check your browser's Developer Console (F12) to see the token.");
+        }
+    </script>
+</body>
+
+</html>
